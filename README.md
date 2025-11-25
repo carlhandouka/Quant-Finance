@@ -21,17 +21,46 @@ A hedge is designed to lock in a future price.
 1. If the asset you plan to sell/buy is the same the asset on which the Futures/Forward contracts on lying on, the hedge ratio is equal to 1. This is a perfect hedge because this way you can hedge your entire exposure.
 
 2. If this is not case:  Cross-Hedging
-We look for Minimum Variance Hedge Ratio: Assumption: $\Delta S = a + b \Delta F + \eps $ (where $\Delta S$ and $\Delta F$ are the variations of prices of the spot and futures prices) \
-If h is the hedge ratio:   $\Delta S - h \Delta F= a + (b-h) \Delta F + \eps $ \
-Minimum Variance is obtained when $h^{*}$=b. Here b is the slope of the Linear Regression of $\Delta S$ versus $\Delta F$ 
+We look for Minimum Variance Hedge Ratio: Assumption: $\Delta S$ = a + b $\Delta F$ + $\eps $ (where $\Delta S$ and $\Delta F$ are the variations of prices of the spot and futures prices) \
+If h is the hedge ratio:   $\Delta S - h \Delta F $= a + (b-h) $ \Delta F$ + $ \eps $ \
+Minimum Variance is obtained when $h^{*}$=b. Here b is the slope of the Linear Regression of $\Delta S$ versus $\Delta F$. \
+Finally, $h^{*}$ = $\rho$ $ \frac{\sigma_S}{\sigma_F}$.  Where $\rho$ is the coefficient of correlation R-squared.\
+The optimal number of contracts is $N^{*}$= $h^{*}$ $\frac{Q_A}{Q_F}$ \
+Where Q_A is the size of the position being hedged, Q_F the size of one futures contract
 
+#### One-day Hedges
+$h^{*}$= $\overhat{\rho}$ $\frac{\overhat{\sigma_S} S}{\overhat{\sigma_F}F}$ \
+where $\overhat{\sigma_S} S$ and $\overhat{\sigma_F} F$ are standard deviations for one day.\
+Therefore, the optimal number of contracts is $N^{*}$= $h^{*}$ $\frac{Q_A}{Q_F}$ = $\overhat{\rho}$ $\frac{\overhat{\sigma_S} S Q_A}{\overhat{\sigma_F}F Q_F}$ 
 
+#### Tailing the hedge
+
+If one wants to consider the risk-free rate of interest r in hedging: the optimal number of contracts is therefore $N^{*}$/(1+r)
+
+#### Hedging an Equity Portfolio
+For a perfect hedge, $N^{*}$= $\frac{V_A}{V_F}$ where V_A is the current value of the ptf and V_F is the current value of one futures contract.  \
+This is the case where the portfolio mirrors the index: $\beta$=1 \
+
+More generally, $\beta$ is the sensitivity to index movements \
+
+To hedge a portfolio of sensitivity $\beta$ (not equal to 1): $N^{*}$= $\beta$ $\frac{V_A}{V_F}$
+
+#### Changing the Beta of a Portfolio
+
+If you want to change the Beta of a ptf to make more/less sensitive to index movements, you can use Futures/Forwards as well. \
+
+To change Beta from $\beta$ to $\beta^{*}$ ($\beta$ > $\beta^{*}$ ): \
+Short $N^{*}$= ($\beta$ - $\beta^{*}$) $\frac{V_A}{V_F}$ contracts \
+
+To change Beta from $\beta$ to $\beta^{*}$ ($\beta$ < $\beta^{*}$ ): \
+Long $N^{*}$= ($\beta^{*}$ - $\beta$) $\frac{V_A}{V_F}$ contracts \
 
 ## Pricing Forwards and Futures prices
 
 
 ## Sources
 
-John C.~Hull, Options, Futures, and Other Derivatives, 11th Edition, Pearson.
-Ernest P.~Chan, Algorithmic Trading: Winning Strategies and Their Rationale, Wiley Finance.
+John C.~Hull, Options, Futures, and Other Derivatives, 11th Edition, Pearson. \
+Ernest P.~Chan, Algorithmic Trading: Winning Strategies and Their Rationale, Wiley Finance. \
+
 
