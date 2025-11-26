@@ -58,6 +58,41 @@ To change Beta from $\beta$ to $\beta^{\*}$ ($\beta$ < $\beta^{\*}$ ): \
 Long $N^{\*}$= ($\beta^{\*}$ - $\beta$) $\frac{V_A}{V_F}$ contracts 
 
 ## Pricing Forwards and Futures prices
+### For a no_dividend paying investment asset
+
+We have $F_0$= $S_0$ $e^{rT}$.  
+If the equality doesn't hold, arbitrageurs can take advantage of the situation: see Arbitrage section
+
+### Known income investment asset
+
+In this case, one should take the known income I into consideration. \
+Therefore, $F_0$= ($S_0$ - I) $e^{rT}$ 
+
+### Known Yield investment asset
+
+We consider that the yield q, is proportional to $S_0$. 
+So that, $F_0$= $S_0$ $e^{(r-q)T}$.
+
+### Valuing Forward contracts
+
+f: value of the contract today\
+K: delivery price for a contract that was negotiated some time ago
+
+At the beginning: K= $F_0$ , f=0 \
+Then, at time t, f=($F_0$ - K) $e^{-rT}$ = $S_0$ - K $e^{-rT}$ . This value can be positive or negative with $S_0$ (or $F_0$ ) value changing over time and K staying the same\
+Similarly, for a known income or known yield instment assset: \
+f= $S_0$ - I - K $e^{-rT}$ : known income \
+f= $S_0$ $e^{-qT}$ - K $e^{-rT}$ : known yield
+
+### Are Futures prices = Forward prices ?
+In general, the answer is no, because of daily settlement. But if r is constant over time, it can be proven that Forward prices = Futures prices. \
+Also, if the price of the underlying asset is strongly positively correlated with r, Futures prices > Forward prices .
+
+For the rest of the section, we consider both prices to be the same.
+
+### Futures prices of Stock indices
+
+
 
 
 ## Sources
