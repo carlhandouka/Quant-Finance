@@ -59,6 +59,77 @@ Long $N^{\*}$= ($\beta^{\*}$ - $\beta$) $\frac{V_A}{V_F}$ contracts
 
 ## Pricing Forwards and Futures prices
 
+$S_0$ : price of the asset underlying the Futures contract today \
+$F_0$ : Futures price today \
+r : Zero-coupon risk-free rate of interest per annum (continuous compounding) \
+T : time until delivery date in the Futures contract (in years)
+
+### For a no_dividend paying investment asset
+
+We have $F_0$= $S_0$ $e^{rT}$.  
+If the equality doesn't hold, arbitrageurs can take advantage of the situation: see Arbitrage section
+
+### Known income investment asset
+
+In this case, one should take the known income I into consideration. \
+Therefore, $F_0$= ($S_0$ - I) $e^{rT}$ 
+
+### Known Yield investment asset
+
+We consider that the yield q, is proportional to $S_0$. 
+So that, $F_0$= $S_0$ $e^{(r-q)T}$.
+
+### Valuing Forward contracts
+
+f: value of the contract today\
+K: delivery price for a contract that was negotiated some time ago
+
+At the beginning: K= $F_0$ , f=0 \
+Then, at time t, f=($F_0$ - K) $e^{-rT}$ = $S_0$ - K $e^{-rT}$ . This value can be positive or negative with $S_0$ (or $F_0$ ) value changing over time and K staying the same\
+Similarly, for a known income or known yield instment assset: \
+f= $S_0$ - I - K $e^{-rT}$ : known income \
+f= $S_0$ $e^{-qT}$ - K $e^{-rT}$ : known yield
+
+### Are Futures prices = Forward prices ?
+In general, the answer is no, because of daily settlement. But if r is constant over time, it can be proven that Forward prices = Futures prices. \
+Also, if the price of the underlying asset is strongly positively correlated with r, Futures prices > Forward prices .
+
+For the rest of the section, we consider both prices to be the same.
+
+### Futures prices of Stock indices
+
+We consider that the index has a known yield q. \
+We have the same formula:  $F_0$= $S_0$ $e^{(r-q)T}$.
+If $F_0$ decreases in time, this might mean that q is expected to be greater than r over the period.
+
+### Futures prices of Currencies
+
+If $r_f$ is the foreign risk-free rate of interest, then $F_0$= $S_0$ $e^{(r- r_f)T}$.
+
+### Futures prices on Commodities
+
+For commodities, you have to consider storage costs (treated as a negative income). \
+Therefore, if the storage costs are independent of the price of the underlying asset $S_0$, we have: $F_0$= ($S_0$ + U) $e^{rT}$ \
+If, this time storage costs are proportional to $S_0$,then: $F_0$= $S_0$ $e^{(r+u)T}$.
+
+### Convenience yield
+
+For some commodities such as gold or silver, it might favorable to hold the asset. This advantage is assumed to be a yield, noted y. \
+In this case, the Futures prices should take this into consideration. Therefore, $F_0$ $e^{yT}$= ($S_0$ + U) $e^{rT}$
+
+### Cost of carry
+
+You can also want to consider all the fees paid (storage costs and interest) as a single variable c, called cost of carry. In the following table is the value of c depending on each type of asset considered such as $F_0$ = $S_0$ $e^{cT}$
+
+| Asset type                  | Cost of carry \(c\)  |
+|-----------------------------|----------------------|
+| Non-Dividend-paying stock   |  c = $r$             |
+| Stock index                 |  c = $r - q$         |
+| Currencies                  |  c = $r - r_f$       |
+| Commodity                   |  c = $r - q + u$     |
+
+For a consumption asset: $F_0$ = $S_0$ $e^{(c-y)T}$  where y is the convenience yield
+
 
 ## Sources
 
