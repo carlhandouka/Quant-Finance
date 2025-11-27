@@ -57,6 +57,30 @@ Short $N^{\*}$= ($\beta$ - $\beta^{\*}$) $\frac{V_A}{V_F}$ contracts
 To change Beta from $\beta$ to $\beta^{\*}$ ($\beta$ < $\beta^{\*}$ ): \
 Long $N^{\*}$= ($\beta^{\*}$ - $\beta$) $\frac{V_A}{V_F}$ contracts 
 
+## Interest rates
+
+### Reference rates
+
+Usually, LIBOR (London Interbank Offered rate) was the reference rate. But now that it is no longer active, other reference rates have replaced it. 
+
+They depend on the country you consider the deal in, and they are called Overnight rates. They are now offered by banks that have a surplus of funds with the central ban, called federal funds rate. \
+One of the most important reference rates is the SOFR (Secured Overnight Financing Rate). It is the reference rate offered by the Federal Reserve Bank of New York.\
+In Europe, it is ESTER (unsecured rate). \
+We regard SOFR, and all the overnight rates in general, as risk-free rates of interest since they are backward-looking rates.
+
+### Measuring Risk-free Rate
+
+The annual rate of interest depends on its compounding (monthly, annually, quarterly, daily, ...) but also on the continuity of compounding. Note that continuous compounding is used in algorithms for practical reasons. 
+
+If A is the invested amount at rate R for n years at annual compounding, in n years you'll have: A $(1+R)^{n}$ \
+In general, if it is compounded m times per annum, you'll have A $(1+ \frac{R}{m})^{nm}$. 
+
+In continuous compounding, you have: A $e^{Rn}$.
+
+To know more about rates converting, see the Interest Rates section.
+
+
+
 ## Pricing Forwards and Futures prices
 
 $S_0$ : price of the asset underlying the Futures contract today \
