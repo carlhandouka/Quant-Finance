@@ -58,6 +58,12 @@ To change Beta from $\beta$ to $\beta^{\*}$ ($\beta$ < $\beta^{\*}$ ): \
 Long $N^{\*}$= ($\beta^{\*}$ - $\beta$) $\frac{V_A}{V_F}$ contracts 
 
 ## Pricing Forwards and Futures prices
+
+$S_0$ : price of the asset underlying the Futures contract today \
+$F_0$ : Futures price today \
+r : Zero-coupon risk-free rate of interest per annum (continuous compounding) \
+T : time until delivery date in the Futures contract (in years)
+
 ### For a no_dividend paying investment asset
 
 We have $F_0$= $S_0$ $e^{rT}$.  
@@ -92,7 +98,37 @@ For the rest of the section, we consider both prices to be the same.
 
 ### Futures prices of Stock indices
 
+We consider that the index has a known yield q. \
+We have the same formula:  $F_0$= $S_0$ $e^{(r-q)T}$.
+If $F_0$ decreases in time, this might mean that q is expected to be greater than r over the period.
 
+### Futures prices of Currencies
+
+If $r_f$ is the foreign risk-free rate of interest, then $F_0$= $S_0$ $e^{(r- r_f)T}$.
+
+### Futures prices on Commodities
+
+For commodities, you have to consider storage costs (treated as a negative income). \
+Therefore, if the storage costs are independent of the price of the underlying asset $S_0$, we have: $F_0$= ($S_0$ + U) $e^{rT}$ \
+If, this time storage costs are proportional to $S_0$,then: $F_0$= $S_0$ $e^{(r+u)T}$.
+
+### Convenience yield
+
+For some commodities such as gold or silver, it might favorable to hold the asset. This advantage is assumed to be a yield, noted y. \
+In this case, the Futures prices should take this into consideration. Therefore, $F_0$ $e^{yT}$= ($S_0$ + U) $e^{rT}$
+
+### Cost of carry
+
+You can also want to consider all the fees paid (storage costs and interest) as a single variable c, called cost of carry. In the following table is the value of c depending on each type of asset considered such as $F_0$ = $S_0$ $e^{cT}$
+
+| Asset type                  | Cost of carry \(c\)  |
+|-----------------------------|----------------------|
+| Non-Dividend-paying stock   |  c = $r$             |
+| Stock index                 |  c = $r - q$         |
+| Currencies                  |  c = $r - r_f$       |
+| Commodity                   |  c = $r - q + u$     |
+
+For a consumption asset: $F_0$ = $S_0$ $e^{(c-y)T}$  where y is the convenience yield
 
 
 ## Sources
