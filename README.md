@@ -59,6 +59,9 @@ Long $N^{\*}$= ($\beta^{\*}$ - $\beta$) $\frac{V_A}{V_F}$ contracts
 
 ## Interest rates
 
+## Binomial model and no-arbitrage
+
+
 ### Reference rates
 
 Usually, LIBOR (London Interbank Offered rate) was the reference rate. But now that it is no longer active, other reference rates have replaced it. 
